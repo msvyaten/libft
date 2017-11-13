@@ -1,17 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_whitespace.c                                 :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msvyaten <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: msvyaten <msvyaten@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 13:25:33 by msvyaten          #+#    #+#             */
-/*   Updated: 2017/11/06 13:26:08 by msvyaten         ###   ########.fr       */
+/*   Created: 2017/11/09 15:38:47 by msvyaten          #+#    #+#             */
+/*   Updated: 2017/11/09 15:38:54 by msvyaten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_whitespace(char c)
+int		ft_intlen(int n)
 {
-	return (c == ' ' || c == '\t' || c == '\n' || \
-			c == '\r' || c == '\v' || c == '\f');
+	int i;
+
+	i = 0;
+	if (n == 0)
+		return (1);
+	if (n == -2147483648)
+		return (11);
+	if (n < 0)
+	{
+		i = 1;
+		n = -n;
+	}
+	while (n)
+	{
+		n = n / 10;
+		i++;
+	}
+	return (i);
 }

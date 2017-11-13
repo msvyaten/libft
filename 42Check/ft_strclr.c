@@ -15,11 +15,11 @@
 
 void	ft_strclr(char *s)
 {
-	int len;
+	size_t len;
 
 	if (!s)
 		return ;
-	len = (int)ft_strlen(s);
+	len = ft_strlen(s);
 	while (len-- > 0)
 		s[len] = '\0';
 }

@@ -13,7 +13,13 @@
 #include <string.h>
 #include "libft.h"
 
-int			ft_atoi(const char *str)
+static int		ft_is_whitespace(char c)
+{
+	return (c == ' ' || c == '\t' || c == '\n' || \
+			c == '\r' || c == '\v' || c == '\f');
+}
+
+int				ft_atoi(const char *str)
 {
 	size_t					i;
 	int						flag;
